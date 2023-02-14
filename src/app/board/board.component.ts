@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent {
-
+  stages: Array<string>=[
+    "To Do",
+    "In Progress",
+    "Complete"
+  ]
 }
