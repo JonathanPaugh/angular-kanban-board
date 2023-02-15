@@ -1,3 +1,7 @@
-<div>
+<div class="root">
   <p>{{todo.text}}</p>
+  <div class="footer">
+    <button (click)="onClickPrevious.emit(todo.text)">←</button>
+    <button (click)="onClickNext.emit(todo.text)">→</button>
+  </div>
 </div>

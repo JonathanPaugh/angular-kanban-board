@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-todo',
@@ -10,6 +10,12 @@ export class TodoComponent {
   todo: Todo={
     text: ""
   }
+
+  @Output()
+  onClickNext: EventEmitter<string> = new EventEmitter<string>();
+
+  @Output()
+  onClickPrevious: EventEmitter<string> = new EventEmitter<string>();
 }
 
 export interface Todo {

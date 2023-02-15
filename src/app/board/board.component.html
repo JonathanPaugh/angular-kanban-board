@@ -3,8 +3,12 @@
     Kanban Board
   </div>
   <div class="body">
-    <app-stage [stage]="stages[0]" [todos]="todos[0]" />
-    <app-stage [stage]="stages[1]" [todos]="todos[1]" />
-    <app-stage [stage]="stages[2]" [todos]="todos[2]" />
+    <app-stage
+      *ngFor="let input of stages; index as i"
+      [stage]="input.stage"
+      [todos]="input.todos"
+      (onClickNext)="handleClickNext($event, i)"
+      (onClickPrevious)="handleClickPrevious($event, i)"
+    />
   </div>
 </div>

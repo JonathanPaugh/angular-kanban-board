@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Stage } from "../stage/stage.component";
+import { EventClick, Stage } from "../stage/stage.component";
 import { Todo } from "../todo/todo.component";
 
 @Component({
@@ -8,45 +8,73 @@ import { Todo } from "../todo/todo.component";
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent {
-  stages: Stage[]=[
+  stages: StageInput[]=[
     {
-      name: "To Do",
-      color: "warning"
+      stage: {
+        name: "To Do",
+        color: "warning"
+      },
+      todos: [
+        {
+          text: "Research options for project implementation"
+        },
+        {
+          text: "Sign the NDA contract"
+        },
+      ]
     },
     {
-      name: "In Progress",
-      color: "danger"
+      stage: {
+        name: "In Progress",
+        color: "danger"
+      },
+      todos: [
+        {
+          text: "Write post to social media platforms"
+        },
+      ]
     },
     {
-      name: "Complete",
-      color: "success"
+      stage: {
+        name: "Complete",
+        color: "success"
+      },
+      todos: [
+        {
+          text: "Participate in scrum meeting"
+        },
+        {
+          text: "Review open pull requests"
+        },
+        {
+          text: "Make morning coffee"
+        },
+      ]
     },
   ]
 
-  todos: Todo[][]=[
-    [
-      {
-        text: "Research options for project implementation"
-      },
-      {
-        text: "Sign the NDA contract"
-      },
-    ],
-    [
-      {
-        text: "Write post to social media platforms"
-      },
-    ],
-    [
-      {
-        text: "Participate in scrum meeting"
-      },
-      {
-        text: "Review open pull requests"
-      },
-      {
-        text: "Make morning coffee"
-      },
-    ]
-  ]
+  handleClickNext(e: EventClick, stageIndex: number) {
+    console.log(e.index);
+    console.log(e.text);
+
+    let stages = structuredClone(this.stages);
+    let [ todo ] = stages[stageIndex].todos.splice(e.index, 1);
+    stages[stageIndex + 1].todos.push(todo);
+    this.stages = stages;
+  }
+
+  handleClickPrevious(e: EventClick, stageIndex: number) {
+    console.log(e.index);
+    console.log(e.text);
+
+    let stages = structuredClone(this.stages);
+    let [ todo ] = stages[stageIndex].todos.splice(e.index, 1);
+    stages[stageIndex - 1].todos.push(todo);
+    this.stages = stages;
+  }
+}
+
+interface StageInput {
+  stage: Stage,
+  todos: Todo[],
 }

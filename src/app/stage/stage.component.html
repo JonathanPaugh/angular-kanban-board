@@ -7,8 +7,10 @@
   </div>
   <div class="body">
     <app-todo
-      *ngFor="let todo of todos"
+      *ngFor="let todo of todos; index as i"
       [todo]="todo"
+      (onClickNext)="handleClickNext($event, i)"
+      (onClickPrevious)="handleClickPrevious($event, i)"
     />
   </div>
 </div>
