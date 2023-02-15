@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --color-primary: #00425A;
+  --color-danger: #FC7300;
+  --color-warning: #BFDB38;
+  --color-success: #1F8A70;
+  --color-light: #EEE;
+  --color-lighter: #FFF;
+  --color-dark: #333;
+  --color-darker: #222;
+
+  --color-text: var(--color-light);
+  --color-background: var(--color-dark);
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, serif;
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+body *, body *:before, body *:after {
+  box-sizing: inherit;
+}

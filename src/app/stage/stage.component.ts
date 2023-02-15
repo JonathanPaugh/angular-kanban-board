@@ -7,5 +7,13 @@ import {Component, Input} from '@angular/core';
 })
 export class StageComponent {
   @Input()
-  name: string = ""
+  stage: Stage = {
+    name: "",
+    color: "light"
+  }
+}
+
+export interface Stage {
+  name: string,
+  color: string,
 }

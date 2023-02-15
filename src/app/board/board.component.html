@@ -1,5 +1,10 @@
-<div>
-  <app-stage [name]="stages[0]" />
-  <app-stage [name]="stages[1]" />
-  <app-stage [name]="stages[2]" />
+<div class="root">
+  <div class="header">
+    Kanban Board
+  </div>
+  <div class="body">
+    <app-stage [stage]="stages[0]" />
+    <app-stage [stage]="stages[1]" />
+    <app-stage [stage]="stages[2]" />
+  </div>
 </div>

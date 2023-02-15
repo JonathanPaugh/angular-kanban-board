@@ -1,0 +1,20 @@
+.root {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.header {
+  height: 5vh;
+  font-size: 4vh;
+  color: white;
+  background-color: var(--color-primary);
+}
+
+.body {
+  display: grid;
+  padding: 1em;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 1em;
+  flex-grow: 1;
+}

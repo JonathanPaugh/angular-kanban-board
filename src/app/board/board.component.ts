@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Stage } from "../stage/stage.component";
 
 @Component({
   selector: 'app-board',
@@ -6,9 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent {
-  stages: Array<string>=[
-    "To Do",
-    "In Progress",
-    "Complete"
+  stages: Array<Stage>=[
+    {
+      name: "To Do",
+      color: "warning"
+    },
+    {
+      name: "In Progress",
+      color: "danger"
+    },
+    {
+      name: "Complete",
+      color: "success"
+    },
   ]
 }
