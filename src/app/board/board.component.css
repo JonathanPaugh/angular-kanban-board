@@ -5,8 +5,9 @@
 }
 
 .header {
-  height: 5vh;
-  font-size: 4vh;
+  min-height: 5vh;
+  padding: 0.25em;
+  font-size: 32pt;
   color: white;
   background-color: var(--color-primary);
 }

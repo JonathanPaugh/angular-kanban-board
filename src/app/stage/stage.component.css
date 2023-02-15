@@ -6,12 +6,13 @@
 }
 
 .header {
-  text-align: center;
   padding: 0.5em;
+  text-align: center;
 }
 
 .body {
   height: 100%;
+  padding: 1em;
   background-color: var(--color-darker);
   flex: 1;
 }

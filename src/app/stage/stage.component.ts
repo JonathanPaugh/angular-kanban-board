@@ -1,4 +1,5 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Todo } from "../todo/todo.component";
 
 @Component({
   selector: 'app-stage',
@@ -11,6 +12,9 @@ export class StageComponent {
     name: "",
     color: "light"
   }
+
+  @Input()
+  todos: Todo[] = []
 }
 
 export interface Stage {

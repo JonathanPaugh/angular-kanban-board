@@ -1,0 +1,8 @@
+div {
+  min-height: 2em;
+  padding: 0.5em;
+  margin: 0 0 1em 0;
+  background-color: var(--color-dark);
+  border-radius: 6px;
+  font-size: 14pt;
+}

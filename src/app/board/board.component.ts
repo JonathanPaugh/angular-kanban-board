@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Stage } from "../stage/stage.component";
+import { Todo } from "../todo/todo.component";
 
 @Component({
   selector: 'app-board',
@@ -7,7 +8,7 @@ import { Stage } from "../stage/stage.component";
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent {
-  stages: Array<Stage>=[
+  stages: Stage[]=[
     {
       name: "To Do",
       color: "warning"
@@ -20,5 +21,32 @@ export class BoardComponent {
       name: "Complete",
       color: "success"
     },
+  ]
+
+  todos: Todo[][]=[
+    [
+      {
+        text: "Research options for project implementation"
+      },
+      {
+        text: "Sign the NDA contract"
+      },
+    ],
+    [
+      {
+        text: "Write post to social media platforms"
+      },
+    ],
+    [
+      {
+        text: "Participate in scrum meeting"
+      },
+      {
+        text: "Review open pull requests"
+      },
+      {
+        text: "Make morning coffee"
+      },
+    ]
   ]
 }
